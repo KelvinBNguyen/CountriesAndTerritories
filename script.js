@@ -68,10 +68,10 @@ function getHighestCapitaGDP() {
 //reigon {string} - a string that is the reigon of the country 
 //return {list} - a list comprised of all the countries in the reigon
 function getMatchingReigon(reigon) {
-  reigon = capitalizeFirstLetter(reigon);
+  reigon = reigon.toLowerCase();
   var matchingReigons = [];
   for (var i in countryName) {
-    if (countryReigon[i].includes(reigon)) {
+    if (countryReigon[i].toLowerCase().includes(reigon)) {
       matchingReigons.push(countryName[i]);
     }
   }
