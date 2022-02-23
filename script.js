@@ -43,7 +43,7 @@ function getHigherPopulation(countryOne, countryTwo) {
     return (countryOne);
   } else if (countryTwoPop > countryOnePop) {
     return (countryTwo);
-  } else if (countryTwoPop = countryOnePop) {
+  } else if (countryTwoPop == countryOnePop) {
     return ("The countries have the same Population");
   } else {
     return ("enter valid countries");
