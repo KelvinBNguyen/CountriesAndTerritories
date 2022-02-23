@@ -26,16 +26,16 @@ function getCode(code) {
 //countryTwo {string} - a string that is the second country to compare population
 //return{string} - a string that returns either countryOne or countryTwo based on which everone is higher
 function getHigherPopulation(countryOne, countryTwo) {
-  countryOne = capitalizeFirstLetter(countryOne);
-  countryTwo = capitalizeFirstLetter(countryTwo);
+  countryOne = countryOne.toLowerCase();
+  countryTwo = countryTwo.toLowerCase();
   var countryOnePop;
   var countryTwoPop;
   for (var i in countryName) {
-    if (countryOne == countryName[i]) {
+    if (countryOne == countryName[i].toLowerCase()) {
       countryOnePop = Number(countryPopulation[i]);
 
     }
-    if (countryTwo == countryName[i]) {
+    if (countryTwo == countryName[i].toLowerCase()) {
       countryTwoPop = Number(countryPopulation[i]);
     }
   }
@@ -81,15 +81,14 @@ function getMatchingReigon(reigon) {
   return (matchingReigons);
 }
 
-
 //Displays to the user the flag that matches the country inputted
 //country {string} - a string that is the country to match with the flag 
 //return {string} - a string that returns a link that is used to display the image of the flag
 function getFlag(country) {
-  country = capitalizeFirstLetter(country);
+  country = country.toLowerCase();
   document.getElementById("img").value = " ";
   for (var i in countryName) {
-    if (country == countryName[i]) {
+    if (country == countryName[i].toLowerCase()) {
       document.getElementById("img").src = countryIMG[i];
       return (countryName[i]);
     }
